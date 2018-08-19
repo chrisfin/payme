@@ -19,6 +19,7 @@ class ReceiversController < ApplicationController
 
 		respond_to do |format|
 		    if @receiver.save!
+		    	log_in @receiver
 		        format.html { redirect_to @receiver, notice: 'Account was successfully created.' }
 		        format.json { render :show, status: :created, location: @receiver }
 		    else

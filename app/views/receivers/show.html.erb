@@ -38,4 +38,4 @@
 	<%= link_to(image_tag("blue-on-light.png", :alt => "Stripe Connect"), 'https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_CJ6ZDJJi7ejLkQfZKFWdKEiql59s4tgX&scope=read_write&state='+@receiver.id.to_s )%>
 <% end %> |
 <%= link_to 'Edit', edit_receiver_path(@receiver) %> |
-<%= link_to 'Back', receivers_path %>
+<%= link_to 'Home', root_path %>

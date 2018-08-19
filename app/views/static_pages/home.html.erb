@@ -1,1 +1,9 @@
-<%= link_to "Get Paid", new_receiver_path  %>
+<h1>Pay Me</h1>
+
+<% if logged_in? %>
+  <li><%= link_to "Account", current_receiver %></li>
+  <li><%= link_to "Log out", logout_path, method: :delete %></li>
+ <% else %>
+  <li><%= link_to "Create an Account", new_receiver_path  %></li>
+  <li><%= link_to "Log in", login_path  %></li>
+<% end %>
