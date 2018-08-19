@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h1>Account Details</h1>
+
+<p>
+  <strong>First name:</strong>
+  <%= @receiver.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @receiver.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @receiver.email %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @receiver.company_name %>
+</p>
+
+<p>
+  <strong>Auth Code:</strong>
+  <%= @receiver.auth_code %>
+</p>
+
+<p>
+  <strong>Stripe Account Number:</strong>
+  <%= @receiver.acc_id %>
+</p>
+
+<h2>Attach Stripe Account</h2>
+<% if @receiver.acc_id %>
+		Connected to Stripe!
+<% else %>	 
+	<%= link_to(image_tag("blue-on-light.png", :alt => "Stripe Connect"), 'https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_CJ6ZDJJi7ejLkQfZKFWdKEiql59s4tgX&scope=read_write&state='+@receiver.id.to_s )%>
+<% end %> |
+<%= link_to 'Edit', edit_receiver_path(@receiver) %> |
+<%= link_to 'Back', receivers_path %>

@@ -13,6 +13,7 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'bcrypt'
 gem 'httparty'
+gem 'figaro' 	
 
 
 group :development, :test do
