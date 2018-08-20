@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receiver_id: 1
+  recurring: MyString
+  card: false
+  ach: false
+
+two:
+  receiver_id: 1
+  recurring: MyString
+  card: false
+  ach: false

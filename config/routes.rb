@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/new'
   get 'sessions/new'
 
-  resources :users, :charges, :receivers
+  resources :users, :charges, :receivers, :pages
 
   root 	'static_pages#home'
   get   '/static_pages/stripe', to: 'static_pages#stripe'

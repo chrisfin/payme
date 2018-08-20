@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806013515) do
+ActiveRecord::Schema.define(version: 20180820042342) do
 
   create_table "charges", force: :cascade do |t|
     t.integer "amount"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20180806013515) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer "receiver_id"
+    t.string "recurring"
+    t.boolean "card"
+    t.boolean "ach"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "default_amount"
+    t.boolean "custom_amount"
   end
 
   create_table "receivers", force: :cascade do |t|

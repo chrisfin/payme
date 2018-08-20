@@ -1,0 +1,43 @@
+<%= form_with(model: page, local: true) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Page Name" %>
+    <%= form.text_field :name, id: :page_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Default Payment Amount" %>
+    <%= form.number_field :default_amount, id: :page_default_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Allow Custom Payment Amount?" %>
+    <%= form.check_box :custom_amount, id: :page_custom_amount %>
+  </div>
+
+  <p>Accept payment with:</p>
+    <%= form.label "Credit or debit card" %>
+    <%= form.check_box :card, id: :page_card %>
+      <%= form.label "ACH credit and wire transfers" %>
+    <%= form.check_box :ach, id: :page_ach %>
+
+  <div class="field">
+    <%= form.label "Recuring Payment" %>
+    <%= form.collection_select :recurring, @billing_intervals, :to_s, :to_s, id: :page_recurring %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
