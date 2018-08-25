@@ -32,7 +32,7 @@
 </p>
 
 <h2>Attach Stripe Account</h2>
-<% if @receiver.acc_id %>
+<% if @receiver.acc_id %> 
 		Connected to Stripe!
 <% else %>	 
 	<%= link_to(image_tag("blue-on-light.png", :alt => "Stripe Connect"), 'https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_CJ6ZDJJi7ejLkQfZKFWdKEiql59s4tgX&scope=read_write&state='+@receiver.id.to_s )%>

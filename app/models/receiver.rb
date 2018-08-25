@@ -1,4 +1,5 @@
 class Receiver < ApplicationRecord
+	has_many :pages
   	serialize :verification_fields_needed
 	before_save { email.downcase! }
 	validates :first_name, presence: true, length: { maximum: 50 }
